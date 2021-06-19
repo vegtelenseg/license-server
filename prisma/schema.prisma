@@ -1,0 +1,47 @@
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int    @id @default(autoincrement())
+  firstname     String
+  lastname      String
+  avatar        String
+  dob           String
+  idNumber      String @unique @map("id_number")
+  licenseStatus String @map("license_status")
+  pdpStatus     String @map("pdp_status")
+
+
+  userTrafficFine UserTrafficFine[]
+  @@map("users")
+}
+
+model TrafficFine {
+  id Int @id @default(autoincrement())
+
+  amount    Decimal
+  reason    String
+  createdAt DateTime @default(now())
+
+  userTrafficFine UserTrafficFine[]
+}
+
+model UserTrafficFine {
+  trafficFineId Int      @map("traffic_fine_id")
+  userId        Int      @map("user_id")
+  status        String   @default("NOT_PAID")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  // Relation fields
+  user        User        @relation(fields: [userId], references: [id])
+  trafficFine TrafficFine @relation(fields: [trafficFineId], references: [id])
+
+  @@id([userId, trafficFineId])
+  @@map("user_traffic_fine")
+}
