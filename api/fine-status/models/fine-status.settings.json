@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fine_statuses",
+  "info": {
+    "name": "Fine Status"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "PAID",
+        "UNPAID",
+        "OVERDUE"
+      ]
+    }
+  }
+}

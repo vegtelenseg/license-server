@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fines",
+  "info": {
+    "name": "Fines",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reason": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "dueDate": {
+      "type": "date"
+    },
+    "fine_status": {
+      "model": "fine-status"
+    },
+    "officer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "driver": {
+      "via": "fines",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
