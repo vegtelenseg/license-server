@@ -8,10 +8,11 @@ services:
   postgres:
     image: postgres:10.16
     restart: always
+    container_name: postgres
     environment:
-      - DATABASE_NAME=license
-      - DATABASE_USERNAME=license
-      - DATABASE_PASSWORD=license
+      - POSTGRES_DB=strapi
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=strapi
     volumes:
       - postgres:/var/lib/postgresql/data
     ports:

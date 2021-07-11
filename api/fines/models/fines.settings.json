@@ -21,9 +21,6 @@
     "dueDate": {
       "type": "date"
     },
-    "fine_status": {
-      "model": "fine-status"
-    },
     "officer": {
       "plugin": "users-permissions",
       "model": "user"
@@ -32,6 +29,14 @@
       "via": "fines",
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "PAID",
+        "UNPAID",
+        "OVERDUE"
+      ]
     }
   }
 }
