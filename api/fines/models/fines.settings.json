@@ -36,7 +36,8 @@
         "PAID",
         "UNPAID",
         "OVERDUE"
-      ]
+      ],
+      "default": "UNPAID"
     }
   }
 }
