@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_license_pdp_statuses",
+  "info": {
+    "name": "PDP Status",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED",
+        "TERMINATED"
+      ]
+    }
+  }
+}

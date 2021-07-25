@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_license_license_statuses",
+  "info": {
+    "name": "License Status",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED",
+        "TERMINATED"
+      ]
+    }
+  }
+}

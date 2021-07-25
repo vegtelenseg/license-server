@@ -70,6 +70,28 @@
     },
     "avatar": {
       "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "licenseNumber": {
+      "type": "string"
+    },
+    "licenseStatus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "license.license-status"
+    },
+    "pdpStatus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "license.pdp-status"
     }
   }
 }
